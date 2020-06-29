@@ -17,7 +17,6 @@ new Vue({
         sayilarToplami() {
             this.result = this.number1 + this.number2;
         },
-
     },
     watch: {
 
@@ -28,5 +27,4 @@ new Vue({
         }
 
     }
-
 })
