@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+
+        {{ message }}
+
+        <br>
+
+        <h3>{{ anotherMessage }}</h3>
+
+        <input type="text" id="text" v-model="userComment" @keyup.enter="addComment"> <!-- Two Way Data Binding (v-model) method -->
+
+        <button v-if="userComment.length>0" @click="addComment">Comment Add</button> <!-- v-on:click or @click method and v-if method using-->
+
+        <h4>
+            {{ userComment }}
+        </h4>
+
+        <ul>
+            <li v-for="comment in userComments">
+                <!-- For Loop -->
+                {{ comment }}
+            </li>
+        </ul>
+
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                message: "Hello Vue.js",
+                anotherMessage: "Vue is great framework",
+                userComment: "",
+                userComments: [
+                    "Vue is incredible",
+                    "Vue great framework",
+                    "Front-End Development for Vue.js"
+                ]
+            },
+            methods: {
+                addComment: function () {
+                    this.userComments.push(this.userComment); // Array push
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
