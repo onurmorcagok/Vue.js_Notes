@@ -11,7 +11,31 @@
 </head>
 
 <body>
+
+    <div id="app">
+
+        {{ inComingData}}
+
+        <br><br>
+
+        <b>Number: </b> {{ number }} <button @click="sayiArttir">Sayı Arttır</button>
+
+        <br><br>
+
+       Number1: {{ number1 }} 
+
+       <br><br>
+
+       Number2: {{ number2 }}
+        
+       <br><br>
+
+       <button @click="sayilarToplami">Toplam:</button> {{ result }}
+
+    </div>
+
     <script src="app.js"></script>
+
 </body>
 
 </html>
