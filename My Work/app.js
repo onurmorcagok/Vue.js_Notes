@@ -14,9 +14,19 @@ new Vue({
             this.number += 1;
         },
 
-        sayilarToplami(){
-           this.result = this.number1 + this.number2;
+        sayilarToplami() {
+            this.result = this.number1 + this.number2;
+        },
+
+    },
+    watch: {
+
+        number(number) {
+            if (number == 5) {
+                this.number += 5;
+            }
         }
+
     }
 
 })
