@@ -8,10 +8,6 @@ new Vue({
     },
     methods: {
 
-      signalChange: function (evt) {
-        this.$emit((evt.srcElement.innerText = ''));
-      },
-
       collection: function (event) {
         const element = event.target;
         element.disabled = true;
@@ -42,5 +38,5 @@ new Vue({
       },
 
     }
-    
+
   });
