@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodluyoruz Vue.js Bootcamp Ödev - 1</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div id="app">
+
+        Sayı 1: <input type="text" id="firstNumber" v-model.number="firstNumber" placeholder=0>
+        <br><br>
+        Sayı 2: <input type="text" id="secondNumber" v-model.number="secondNumber" placeholder=0>
+        <br><br>
+        <button id="button" @click="collection" v-on:click="addResult">Topla</button>
+        <br><br>
+
+        <div v-if="collections.length>0">işlem yapıldı. Sonuç: {{ result }}</div>
+
+        <hr>
+
+        <button id="btn">Geçmişi Göster</button>
+
+        <ul>
+            <li v-for="collection in collections">
+                <span v-html="collectionResult"></span> {{ collection }}
+            </li>
+        </ul>
+
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
