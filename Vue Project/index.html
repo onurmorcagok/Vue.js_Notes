@@ -16,14 +16,14 @@
 
     <div id="app">
 
-        Sayı 1: <input type="text" id="firstNumber" v-model.number="firstNumber" placeholder=0>
+        Sayı 1: <input type="text" id="firstNumber" v-model.number="firstNumber" placeholder=0 v-on:change="signalChange" />
         <br><br>
         Sayı 2: <input type="text" id="secondNumber" v-model.number="secondNumber" placeholder=0>
         <br><br>
-        <button id="button" @click="collection" v-on:click="addResult">Topla</button>
+        <button id="button" @click="collection" v-on:click="addResult" :disabled="!firstNumber || !secondNumber">Topla</button>
         <br><br>
 
-        <div v-if="collections.length>0">işlem yapıldı. Sonuç: {{ result }}</div>
+        <div v-if="collections.length>0" id="calcResult">işlem yapıldı. Sonuç: {{ result }}</div>
 
         <hr>
 
