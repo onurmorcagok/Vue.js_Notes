@@ -8,6 +8,7 @@ new Vue({
         result: '',
         isActive: true,
         isShow:false,
+        showResult:true,
         collections: [
 
         ],

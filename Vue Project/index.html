@@ -20,7 +20,7 @@
         <br><br>
         Sayı 2: <input type="text" id="secondNumber" v-model.number="secondNumber" placeholder=0>
         <br><br>
-        <button id="button" @click="collection" v-on:click="addResult" :disabled="!firstNumber || !secondNumber">Topla</button>
+        <input type="button" value="Topla" v-show="showResult" id="button" @click="collection" v-on:click="addResult" :disabled="!firstNumber || !secondNumber"/>
         <br><br>
 
         <div v-if="collections.length>0" id="calcResult">işlem yapıldı. Sonuç: {{ result }}</div>
