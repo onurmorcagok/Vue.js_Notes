@@ -27,7 +27,8 @@
 
         <hr>
 
-        <button id="btn">Geçmişi Göster</button>
+        <button v-if="isActive" :class="{ 'active': isActive, 'show': isShow}" @click="isActive = !isActive" v-on:click="isShow = !isShow">Geçmişi Göster</button>
+        <button v-else="isShow" :class="{ 'active': isActive, 'show': isShow}" @click="isActive = !isActive" v-on:click="isShow = !isShow">Geçmişi Gizle</button>
 
         <ul>
             <li v-for="collection in collections">

@@ -1,11 +1,13 @@
 new Vue({
-    
+
     el: '#app',
     data: {
 
         firstNumber: '',
         secondNumber: '',
         result: '',
+        isActive: true,
+        isShow:false,
         collections: [
 
         ],
@@ -17,9 +19,9 @@ new Vue({
             const element = event.target;
             element.disabled = true;
             setTimeout(() => {
-                this.result = 0;
-                this.firstNumber = 0;
-                this.secondNumber = 0;
+                this.result = '';
+                this.firstNumber = '';
+                this.secondNumber = '';
             }, 500);
             element.disabled = false;
             this.result = this.firstNumber + this.secondNumber;
