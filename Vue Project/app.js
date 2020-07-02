@@ -7,7 +7,7 @@ new Vue({
         secondNumber: '',
         result: '',
         isShow: true,
-        showResult: true,
+        clicked:true,
         collections: [
 
         ],

@@ -31,7 +31,7 @@
         <button v-else="isShow" :class="{ 'active': isActive, 'show': isShow}" @click="isActive = !isActive" v-on:click="isShow = !isShow">Geçmişi Gizle</button> -->
 
 
-        <button @click="isShow = !isShow">{{ isShow == true ? 'Geçmişi Gizle' : 'Geçmişi Göster' }}</button>
+        <button @click="isShow = !isShow" v-bind:class="{'active': !clicked, 'show': clicked}"  v-on:click ="clicked = !clicked" @click="isShow = !isShow">{{ isShow == true ? 'Geçmişi Gizle' : 'Geçmişi Göster' }}</button>
 
         <ul v-if="isShow">
             <li v-for="collection in collections">
