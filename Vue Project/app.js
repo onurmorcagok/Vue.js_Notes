@@ -6,9 +6,8 @@ new Vue({
         firstNumber: '',
         secondNumber: '',
         result: '',
-        isActive: true,
-        isShow:false,
-        showResult:true,
+        isShow: true,
+        showResult: true,
         collections: [
 
         ],

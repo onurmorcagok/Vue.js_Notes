@@ -27,10 +27,13 @@
 
         <hr>
 
-        <button v-if="isActive" :class="{ 'active': isActive, 'show': isShow}" @click="isActive = !isActive" v-on:click="isShow = !isShow">Geçmişi Göster</button>
-        <button v-else="isShow" :class="{ 'active': isActive, 'show': isShow}" @click="isActive = !isActive" v-on:click="isShow = !isShow">Geçmişi Gizle</button>
+        <!-- <button v-if="isActive" :class="{ 'active': isActive, 'show': isShow}" @click="isActive = !isActive" v-on:click="isShow = !isShow">Geçmişi Göster</button>
+        <button v-else="isShow" :class="{ 'active': isActive, 'show': isShow}" @click="isActive = !isActive" v-on:click="isShow = !isShow">Geçmişi Gizle</button> -->
 
-        <ul>
+
+        <button @click="isShow = !isShow">{{ isShow == true ? 'Geçmişi Gizle' : 'Geçmişi Göster' }}</button>
+
+        <ul v-if="isShow">
             <li v-for="collection in collections">
                 <span v-html="collectionResult"></span> {{ collection }}
             </li>
