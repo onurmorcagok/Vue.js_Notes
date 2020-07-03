@@ -14,7 +14,19 @@
 
     <div id="app">
 
+        {{ message }}
+
+        <h3> {{ anotherMessage }} </h3>
+
+        <input type="text" v-model="userComment" @keyup.enter="addUserComment"> 
+
+        <button @click="addUserComment" v-if="userComment.length>0">Ekle</button>
         
+        <ul>
+           <li v-for="comment in userComments">
+               {{ comment }}
+           </li> 
+        </ul>
 
     </div>
 
