@@ -2,41 +2,34 @@ new Vue({
 
     el: '#app',
     data: {
-
-        firstNumber: '',
-        secondNumber: '',
-        result: '',
-        isShow: true,
-        clicked:true,
-        collections: [
-
-        ],
+        number1: '',
+        number2: '',
+        total: null,
     },
-
     methods: {
-
-        collection: function (event) {
-            const element = event.target;
-            element.disabled = true;
-            setTimeout(() => {
-                this.result = '';
-                this.firstNumber = '';
-                this.secondNumber = '';
-            }, 500);
-            element.disabled = false;
-            this.result = this.firstNumber + this.secondNumber;
+        sum() {
+            this.total = this.number1 + this.number2;
+        },
+        clearInputs() {
+            this.total = null
+            this.number1 = ''
+            this.number2 = ''
         },
 
-        addResult: function () {
-            this.collections.push(`${this.firstNumber} + ${this.secondNumber} = ${this.result}`);
-        },
     },
+    watch: { // Watch bir seyleri izlemesi icin o seyin var olması gerekir.
+        total(value) {
+            if (value !== null) {
+                setTimeout(() => {
+                    this.clearInputs();
+                }, 1000)
+            }
 
-    computed: {
-
-        collectionResult() {
-            return 'Sonuç: ';
-        },
+        }
     },
-
+    computed:{ // Computed method gibi yazılır, degisken gibi kullanilir.
+        isTotalShowed() {
+            return this.total !== null ? true : false
+        }
+    },
 });
