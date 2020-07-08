@@ -14,7 +14,15 @@
 
     <div id="app">
 
-      
+        <button @click="changeToArray">Array Change</button>
+
+        {{ array[0] }}
+
+        <br><br>
+
+        <button @click="changeToObject">Object Change</button>
+
+        {{ object }}
 
     </div>
 
@@ -22,12 +30,44 @@
         new Vue({
             el: '#app',
             data: {
-                
+                array: [{
+                        name: 'Michael',
+                        surname: 'Jordan'
+                    },
+                    {
+                        name: 'David',
+                        surname: 'Beckham'
+                    }
+                ],
+                object: {
+
+                    name: 'Onur',
+                    surname: 'Morcagök'
+                }
+
             },
-            methods:{
-               
+            methods: {
+                changeToArray() {
+                    this.array[0].name = "Lary";
+                },
+                changeToObject() {
+                    this.object.name = "Umut";
+                }
             },
-            
+            watch: {
+                array: {
+                    handler(newValue) { // Handler method Array ve Obje içerisinde gerçekleştirilen değişiklikleri yakalamak için kullanılır.
+                        console.log(newValue);
+                    },
+                    deep: true,
+                },
+                object: {
+                    handler(newValue) {
+                        console.log(newValue);
+                    },
+                    deep: true,
+                }
+            },
         })
     </script>
 
