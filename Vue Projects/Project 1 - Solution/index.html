@@ -28,7 +28,9 @@
 
         <hr>
 
-        <ul>
+        <button @click="isShow = !isShow" v-bind:class="{'active': !clicked, 'show': clicked}"  v-on:click ="clicked = !clicked" @click="isShow = !isShow">{{ isShow == true ? 'Geçmişi Gizle' : 'Geçmişi Göster' }}</button>
+
+        <ul v-if="isShow">
             <li v-for="(total,totalIndex) in totalsArray">{{ totalIndex + 1 }}. işlem'de {{ total }}</li>
         </ul>
 

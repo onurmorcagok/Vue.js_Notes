@@ -5,6 +5,8 @@ new Vue({
         number1: '',
         number2: '',
         total: null,
+        isShow: true,
+        clicked:true,
         totalsArray: [
 
         ],
