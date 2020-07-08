@@ -5,6 +5,9 @@ new Vue({
         number1: '',
         number2: '',
         total: null,
+        totalsArray: [
+
+        ],
     },
     methods: {
         sum() {
@@ -17,18 +20,18 @@ new Vue({
         },
 
     },
-    watch: { // Watch bir seyleri izlemesi icin o seyin var olması gerekir.
+    watch: { // Watch bir seyleri izlemesi icin o seyin var olması gerekir. Method her seferinde render edilir.
         total(value) {
             if (value !== null) {
+                this.totalsArray.push(`${this.number1} + ${this.number2} toplandı. Sonuç: ${this.total}`);
                 setTimeout(() => {
                     this.clearInputs();
                 }, 1000)
             }
-
         }
     },
-    computed:{ // Computed method gibi yazılır, degisken gibi kullanilir.
-        isTotalShowed() {
+    computed: { // Computed method gibi yazılır, degisken gibi kullanilir. Computed degisene kadar 1 defa cagirilir.
+        isTotalShowing() {
             return this.total !== null ? true : false
         }
     },

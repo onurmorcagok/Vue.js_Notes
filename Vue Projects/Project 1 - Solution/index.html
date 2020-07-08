@@ -22,11 +22,15 @@
 
         <br><br>
 
-        <button @click="sum" :disabled="isTotalShowed">Topla</button> <!-- :disabled="total != null" -->
+        <button @click="sum" :disabled="isTotalShowing">Topla</button> <!-- :disabled="total != null" -->
 
         {{ total }}
 
         <hr>
+
+        <ul>
+            <li v-for="(total,totalIndex) in totalsArray">{{ totalIndex + 1 }}. işlem'de {{ total }}</li>
+        </ul>
 
     </div>
 
