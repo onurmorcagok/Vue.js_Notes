@@ -22,7 +22,7 @@ new Vue({
         },
 
     },
-    watch: { // Watch bir seyleri izlemesi icin o seyin var olması gerekir. Method her seferinde render edilir.
+    watch: { // Watch bir seyleri izlemesi icin o seyin var olması gerekir. data'da tanımlı olmak ZORUNDA! Method her seferinde render edilir.
         total(value) {
             if (value !== null) {
                 this.totalsArray.push(`${this.number1} + ${this.number2} toplandı. Sonuç: ${this.total}`);
