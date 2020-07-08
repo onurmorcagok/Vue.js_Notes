@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodluyoruz Vue.js Bootcamp Ödev - 1</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div id="app">
+
+        Sayı 1: <input type="text" id="firstNumber" v-model.number="firstNumber" placeholder=0>
+        <br><br>
+        Sayı 2: <input type="text" id="secondNumber" v-model.number="secondNumber" placeholder=0>
+        <br><br>
+        <input type="button" value="Topla" id="button" @click="collection" v-on:click="addResult" :disabled="!firstNumber || !secondNumber"/>
+        <br><br>
+
+        <div v-if="collections.length>0" id="calcResult">işlem yapıldı. Sonuç: {{ result }}</div>
+
+        <hr>
+
+        <!-- <button v-if="isActive" :class="{ 'active': isActive, 'show': isShow}" @click="isActive = !isActive" v-on:click="isShow = !isShow">Geçmişi Göster</button>
+        <button v-else="isShow" :class="{ 'active': isActive, 'show': isShow}" @click="isActive = !isActive" v-on:click="isShow = !isShow">Geçmişi Gizle</button> -->
+
+
+        <button @click="isShow = !isShow" v-bind:class="{'active': !clicked, 'show': clicked}"  v-on:click ="clicked = !clicked" @click="isShow = !isShow">{{ isShow == true ? 'Geçmişi Gizle' : 'Geçmişi Göster' }}</button>
+
+        <ul v-if="isShow">
+            <li v-for="collection in collections">
+                <span v-html="collectionResult"></span> {{ collection }}
+            </li>
+        </ul>
+
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>

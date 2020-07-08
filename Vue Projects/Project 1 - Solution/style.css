@@ -1,0 +1,13 @@
+#button {
+    margin-left: 50px;
+}
+
+.active {
+    background: green;
+    color: white;
+  }
+
+  .show {
+    background-color: red;
+    color: white;
+  }
