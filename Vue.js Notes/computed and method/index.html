@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+    <div id="app">
+
+        <button @click="number1++">Method ile Sayı Arttır</button>
+        {{ number1 }} 
+        <br><br>
+        <button @click="number2++">Computed ile Sayı Arttır</button>
+        {{ number2 }}
+
+
+        <br><br>
+
+        Method ile göster: {{ showNumber() }}
+        <br><br>
+        Computed ile göster: {{ showComputed }}
+
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                number1: 0,
+                number2: 0,
+            },
+            methods:{
+                showNumber(){
+                    console.log("Sayı 1 method ile arttırıldı.")
+                    return this.number1 < 18 ? 'Reşit Değilsiniz' : 'Reşitsiniz'
+                }
+            },
+            computed:{
+                showComputed(){
+                    console.log("Sayı 2 computed ile arttırıldı.")
+                    return this.number2 < 18 ? 'Reşit Değilsiniz' : 'Reşitsiniz'
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
