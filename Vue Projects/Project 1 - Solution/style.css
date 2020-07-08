@@ -2,6 +2,10 @@ button {
   margin-left: 45px;
 }
 
+p {
+  margin-left:45px;
+}
+
 .active {
   background: green;
   color: white;

@@ -24,11 +24,17 @@
 
         <button @click="sum" :disabled="isTotalShowing">Topla</button> <!-- :disabled="total != null" -->
 
-        {{ total }}
+        <p v-if="isTotalShowing"> 
+
+            {{ number1 }} + {{ number2 }} = {{ total }}
+        
+        </p> 
 
         <hr>
 
-        <button @click="isShow = !isShow" v-bind:class="{'active': !clicked, 'show': clicked}"  v-on:click ="clicked = !clicked" @click="isShow = !isShow">{{ isShow == true ? 'Geçmişi Gizle' : 'Geçmişi Göster' }}</button>
+        <button @click="isShow = !isShow" v-bind:class="{'active': !clicked, 'show': clicked}"
+            v-on:click="clicked = !clicked"
+            @click="isShow = !isShow">{{ isShow == true ? 'Geçmişi Gizle' : 'Geçmişi Göster' }}</button>
 
         <ul v-if="isShow">
             <li v-for="(total,totalIndex) in totalsArray">{{ totalIndex + 1 }}. işlem'de {{ total }}</li>
