@@ -1,27 +1,25 @@
 <template>
-  <div id="container">
-    Hello {{ name }}
+  <div>
+    <HelloWorld name="Onur" surname="MORCAGÖK" :user="myUser"/>
   </div>
 </template>
 
 <script>
+import HelloWorld from "./components/HelloWorld";
+
 export default {
   name: "App",
+  components: {
+    HelloWorld
+  },
   data() {
     return {
-      name: "Onur",
-      number1: 21,
-      number2: 12,
-      result: null
+      myUser: {
+        name: "John",
+        surname: "Doe"
+      }
     };
-  },
-  methods: {
-    topla() {
-      this.result = this.number1 + this.number2;
-    }
   }
 };
 </script>
 
-<style>
-</style>
