@@ -1,23 +1,24 @@
 <template>
   <div>
-    <firstComponent>
-      
-    </firstComponent>
+    <button @click="isShow =! isShow">Göster / Gizle</button>
+    <firstComponent v-if="isShow" />
   </div>
 </template>
 
 <script>
 
-  import firstComponent from "./components/firstComponent";
-
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    firstComponent,
+    firstComponent: () => import("./components/firstComponent")
   },
-}
+  data() {
+    return {
+      isShow: false,
+    };
+  },
+};
 </script>
 
 <style>
-
 </style>
