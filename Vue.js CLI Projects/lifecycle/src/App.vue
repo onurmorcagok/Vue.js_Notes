@@ -1,12 +1,21 @@
 <template>
   <div>
+
     <button @click="isShow =! isShow">Göster / Gizle</button>
+
     <firstComponent v-if="isShow" />
+
+    <hr />
+
+    <template v-if="isShow">
+      <firstComponent/>
+    </template>
+
   </div>
+
 </template>
 
 <script>
-
 export default {
   name: "App",
   components: {
@@ -14,9 +23,9 @@ export default {
   },
   data() {
     return {
-      isShow: false,
+      isShow: false
     };
-  },
+  }
 };
 </script>
 

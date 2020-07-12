@@ -1,10 +1,11 @@
 <template>
   <div>
     <div>First Component Called</div>
-    
-    <button @click="message = 'Hello Vue'"> Message Change </button>
+
+    <button @click="message = 'Hello Vue! Message is change :)'">Message Change</button>
 
     <div>{{message}}</div>
+
   </div>
 </template>
 
@@ -13,7 +14,8 @@ export default {
   name: "firstComponent",
   data() {
     return {
-      message: ""
+      message: "",
+      isShow: false
     };
   },
   beforeCreated() {},
@@ -28,9 +30,7 @@ export default {
     console.log("Mounted is here");
     this.message = "Mounted";
   },
-  beforeUpdated() {
-
-  },
+  beforeUpdated() {},
   updated() {
     // ***
     console.log("Updated is here");
