@@ -33,7 +33,7 @@ export default {
   components: {
     IdentityComponent,
   },
-  data() {
+  data() { // Data from database
     return {
       users: [
         {
@@ -50,7 +50,7 @@ export default {
           address: {
             city: "",
             postCode: ""
-          }
+          },
         },
         {
           name: "Michael",
@@ -62,7 +62,11 @@ export default {
             licenceType: "B",
             publishDate: "13.09.1998",
             expireDate: "13.09.2008"
-          }
+          },
+          address: {
+            city: "",
+            postCode: ""
+          },
         },
         {
           name: "David",
@@ -74,7 +78,11 @@ export default {
             licenceType: "B,A/2",
             publishDate: "24.06.1999",
             expireDate: "24.06.2009"
-          }
+          },
+          address: {
+            city: "",
+            postCode: ""
+          },
         }
       ],
       selectedUser: null
