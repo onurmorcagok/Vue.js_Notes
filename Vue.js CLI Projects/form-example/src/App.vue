@@ -1,16 +1,36 @@
 <template>
   <div id="container">
-    <userFormComponent></userFormComponent>
+    <userFormComponent @userSubmit="userAdd"
+                       ref="myUserForm"></userFormComponent>
+    <br />
+    <userList :userList="userList" 
+              @onUpdate="setUpdateUserData"></userList>
   </div>
 </template>
 
 <script>
+
 import userFormComponent from "./components/userFormComponent";
+import userList from "./components/userList";
 
 export default {
   name: "App",
   components: {
-    userFormComponent
+    userFormComponent,
+    userList,
+  },
+  data() {
+    return {
+      userList: [],
+    };
+  },
+  methods: {
+    userAdd(data) {
+      this.userList.push(data);
+    },
+    setUpdateUserData(data){
+      this.$refs.myUserForm.formModel = {...data }
+    }
   }
 };
 </script>
@@ -20,7 +40,7 @@ export default {
   margin: auto;
   width: 50%;
   border: 5px solid black;
-  padding: 10px;
-  text-align:center;
+  padding: 80px;
+  text-align: center;
 }
 </style>
