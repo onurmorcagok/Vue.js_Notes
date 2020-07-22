@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework - 1</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="exercise">
+        <!-- 1) Interpolation yani {{}} Syntax'ını kullanarak <p> elementinin içeriğini Name ve Age verileriyle doldurun-->
+        <p>Name: {{ name }} <br> Age: {{ age }}</p>
+        <!-- 2) Yaşınızı 5 ile çarpıp <p> içerisinde yazdırınız -->
+
+        <p> Yaşın 5 katı: {{ age * 5}}</p>
+
+        <!-- 3) Fonksiyon çağırarak 0 ile 1 arasında bir sayı üretip <p> içerisinde yazdırınız (Math.random()) -->
+        <p>0 ile 1 arasında üretilen rastgele sayı: {{ randomNumber() }}</p>
+
+        <!-- 4) Google üzerinden bulacağınız herhangi bir fotoğrafı <img> elementinde gösterme işlemini yapınızı. Bunu yaparken "src" attribute' una bind etmeyi unutmayınız -->
+        <img :src="imgSrc">
+
+        <!-- 5) Name değişkeninin değerinin <input /> içine yazdığınız değer ile anlık olarak değiştirilmesini sağlayınız. ("value" attribute kullanarak) -->
+        <div>
+            <input type="text" v-model="name">
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#exercise',
+            data: {
+                name: 'Michael',
+                age: 12,
+                imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1184px-Vue.js_Logo_2.svg.png',
+            },
+            methods: {
+                randomNumber(){
+                    return Math.random();
+                }
+            }
+        });
+    </script>
+    <style>
+        img {
+            width:200px;
+        }
+    </style>
+</body>
+
+</html>
