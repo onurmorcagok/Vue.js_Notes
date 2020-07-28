@@ -1,10 +1,10 @@
 <template>
   <div class="col-xs-12 col-sm-6" v-if="Object.keys(server).length === 0">
-    <p>Sunucu Bilgisi güncel değil!!</p>
+    <p>Henüz bir sunucu seçilmedi.</p>
   </div>
 
   <div class="col-xs-12 col-sm-6" v-else>
-    <p>Sunucu Bilgisi güncel değil!!</p>
+    <p>Seçilen sunucuyu görüntülüyorsunuz.</p>
     <h3>Sunucu ID:{{ server.id }}</h3>
     <p>Sunucu Status:{{ server.status }}</p>
     <button class="btn btn-info btn-xs" @click="changeServerToStatus">Durumu Düzelt</button>
