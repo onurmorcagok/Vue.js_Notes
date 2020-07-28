@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="col-xs-12 col-sm-6">
+    <div id="info" class="col-xs-12 col-sm-6">
       <p>Sunucu Bilgisi güncel değil!!</p>
     </div>
   </div>
@@ -12,5 +12,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+  #info{
+    margin-top:100px;
+  }
 </style>
