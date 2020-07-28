@@ -28,7 +28,6 @@ import {eventBus} from '../../main';
           {id:3, status:'Ciddi'},
           {id:4, status:'Önemsiz'},
         ],
-        selectedID:'',
       }
     },
     methods: {
