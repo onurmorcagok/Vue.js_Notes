@@ -2,6 +2,8 @@
     <div class="card" >
         <h1 @click="changeTitle">{{ title }}</h1>
         <br>
+        <h3>{{ inComingMessage }}</h3>
+        <br>
         <input type="text" v-model="message">
         <br>
         <button @click="sendToMessage">Send Message</button>
@@ -14,8 +16,9 @@ import { eventBus } from '../main'
         name: 'Header',
         data() {
             return {
-                title: 'Onur',
+                title: 'Click here',
                 message: '',
+                inComingMessage: '',
             }
         },
         methods:{
@@ -27,7 +30,13 @@ import { eventBus } from '../main'
             sendToMessage(){
                 eventBus.$emit('sendToMessage',this.message);
             }
-        }
+        },
+        created(){
+            eventBus.$on('sendToMessage2',(message) => {
+                this.inComingMessage = message;
+            })
+        },
+         beforeDestroy() {},
     }
 </script>
 

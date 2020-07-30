@@ -2,7 +2,11 @@
   <div class="card">
     <p>{{ copyright }}</p>
     <br />
-    <h3>{{ inComingMessage }}</h3>
+    <h3>{{ inComingMessage2 }}</h3>
+    <br />
+    <input type="text" v-model="message2" />
+    <br />
+    <button @click="sendToMessage">Send Message</button>
   </div>
 </template>
 
@@ -13,21 +17,25 @@ export default {
   name: "Footer",
   data() {
     return {
-      copyright: "Footer Component",
-      inComingMessage: '',
+      copyright: "Change here",
+      message2: "",
+      inComingMessage2: "",
     };
+  },
+  methods: {
+    sendToMessage() {
+      eventBus.$emit("sendToMessage2", this.message2);
+    },
   },
   created() {
     eventBus.$on("changeTitle", (data) => {
       this.copyright = data;
     });
-    eventBus.$on('sendToMessage',(message) => {
-      this.inComingMessage = message;
+    eventBus.$on("sendToMessage", (message2) => {
+      this.inComingMessage2 = message2;
     });
   },
-  beforeDestroy() {
-
-  },
+  beforeDestroy() {},
 };
 </script>
 
