@@ -4,7 +4,7 @@
         <br>
         <h3>{{ inComingMessage }}</h3>
         <br>
-        <input type="text" v-model="message">
+        <input type="text" v-model="message" placeholder="Please send to message">
         <br>
         <button @click="sendToMessage">Send Message</button>
     </div>
@@ -29,6 +29,13 @@ import { eventBus } from '../main'
             },
             sendToMessage(){
                 eventBus.$emit('sendToMessage',this.message);
+            }
+        },
+        watch:{
+            message(){
+                setTimeout(()=>{
+                    this.message = '';
+                },5000)
             }
         },
         created(){
