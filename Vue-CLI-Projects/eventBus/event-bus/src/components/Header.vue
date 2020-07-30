@@ -1,6 +1,10 @@
 <template>
     <div class="card" >
         <h1 @click="changeTitle">{{ title }}</h1>
+        <br>
+        <input type="text" v-model="message">
+        <br>
+        <button @click="sendToMessage">Send Message</button>
     </div>
 </template>
 
@@ -10,7 +14,8 @@ import { eventBus } from '../main'
         name: 'Header',
         data() {
             return {
-                title: 'Onur M.',
+                title: 'Onur',
+                message: '',
             }
         },
         methods:{
@@ -18,6 +23,9 @@ import { eventBus } from '../main'
                 //this.$emit('changeTitle','Onur MORCAGÖK');
                 this.title = "Onur MORCAGÖK";
                 eventBus.$emit('changeTitle',this.title);
+            },
+            sendToMessage(){
+                eventBus.$emit('sendToMessage',this.message);
             }
         }
     }

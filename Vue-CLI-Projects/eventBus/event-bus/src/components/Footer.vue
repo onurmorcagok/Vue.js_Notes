@@ -1,6 +1,8 @@
 <template>
   <div class="card">
     <p>{{ copyright }}</p>
+    <br />
+    <h3>{{ inComingMessage }}</h3>
   </div>
 </template>
 
@@ -11,13 +13,20 @@ export default {
   name: "Footer",
   data() {
     return {
-      copyright: "Onur 2020",
+      copyright: "Footer Component",
+      inComingMessage: '',
     };
   },
   created() {
     eventBus.$on("changeTitle", (data) => {
       this.copyright = data;
     });
+    eventBus.$on('sendToMessage',(message) => {
+      this.inComingMessage = message;
+    });
+  },
+  beforeDestroy() {
+
   },
 };
 </script>
