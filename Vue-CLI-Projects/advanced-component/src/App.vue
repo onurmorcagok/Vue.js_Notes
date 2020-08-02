@@ -4,10 +4,7 @@
       <br />
       <br />
       <button @click="selectedComponent = 'Memory'" class="btn btn-sm btn-primary">Memory Component</button>
-      <button
-        @click="selectedComponent = 'NewMemory'"
-        class="btn btn-sm btn-primary"
-      >NewMemory Component</button>
+      <button @click="selectedComponent = 'NewMemory'" class="btn btn-sm btn-primary">NewMemory Component</button>
       <button @click="selectedComponent = 'Author'" class="btn btn-sm btn-primary">Author Component</button>
       <hr />
       <p>Selected Component: {{ selectedComponent }}</p>
