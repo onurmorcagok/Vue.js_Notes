@@ -3,7 +3,8 @@
     <slot name="title"></slot>
     <slot name="description"></slot>
     <p>{{ message }}</p>
-    <button @click="sendToMessage">Send Message</button>
+    <p>{{ messageRed }}</p>
+    <button @click="sendToMessageRed">Send Message</button>
   </div>
 </template>
 
@@ -14,15 +15,16 @@ import { eventBus } from '../main'
     data() {
       return {
         message: '',
+        messageRed: 'Bu mesaj Yeşil Component içerisinden gelmiştir. '
       }
     },
     methods: {
-        sendToMessage() {
-            eventBus.$emit('sendToMessage',this.message);
+        sendToMessageRed() {
+            eventBus.$emit('sendToMessageRed',this.messageRed);
         }
     },
     created() {
-      eventBus.$on('sendToMessage', (message) => {
+      eventBus.$on('sendToMessageBlue', (message) => {
         this.message = message;
       })
     }

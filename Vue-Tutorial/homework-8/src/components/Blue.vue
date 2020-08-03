@@ -2,7 +2,7 @@
   <div>
     <slot name="title"></slot>
     <slot name="description"></slot>
-    <span hidden>{{ message }}</span>
+    <p>{{ message }}</p>
     <button @click="sendToMessage">Send Message</button>
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
     },
     methods: {
         sendToMessage() {
-            eventBus.$emit('sendToMessage',this.message);
+            eventBus.$emit('sendToMessageBlue',this.message);
         }
     }
 };

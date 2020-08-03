@@ -2,7 +2,8 @@
   <div>
     <slot name="title"></slot>
     <slot name="description"></slot>
-    <span>{{ message }}</span>
+    <p>{{ messageBlue }}</p>
+    <p>{{ messageRed }}</p>
   </div>
 </template>
 
@@ -12,12 +13,16 @@ export default {
   name: "Red",
   data() {
     return {
-      message: '',
+      messageBlue: '',
+      messageRed: '',
     }
   },
   created() {
-      eventBus.$on('sendToMessage', (message) => {
-        this.message = message;
+      eventBus.$on('sendToMessageRed', (messageRed) => {
+        this.messageRed = messageRed;
+      }),
+      eventBus.$on('sendToMessageBlue', (messageBlue) => {
+        this.messageBlue = messageBlue;
       })
     }
 };
