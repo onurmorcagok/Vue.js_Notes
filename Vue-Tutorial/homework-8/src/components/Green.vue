@@ -3,7 +3,7 @@
     <slot name="title"></slot>
     <slot name="description"></slot>
     <p>{{ message }}</p>
-    <p>{{ messageRed }}</p>
+    <p hidden>{{ messageRed }}</p>
     <button @click="sendToMessageRed">Send Message</button>
   </div>
 </template>

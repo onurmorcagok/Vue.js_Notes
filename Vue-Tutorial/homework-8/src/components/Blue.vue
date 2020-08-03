@@ -2,7 +2,7 @@
   <div>
     <slot name="title"></slot>
     <slot name="description"></slot>
-    <p>{{ message }}</p>
+    <p hidden>{{ message }}</p>
     <button @click="sendToMessage">Send Message</button>
   </div>
 </template>
