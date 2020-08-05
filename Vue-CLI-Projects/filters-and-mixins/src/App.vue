@@ -20,6 +20,7 @@
       <li v-for="product in filtered" v-bind:key="product">{{ product }}</li>
     </ul>
     <hr />
+    <br>
     <filterList></filterList>
   </div>
 </template>
