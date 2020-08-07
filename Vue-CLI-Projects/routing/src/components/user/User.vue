@@ -1,14 +1,34 @@
 <template>
   <div class="container">
-    <h3>User Component</h3>
+    <router-view>
+
+    </router-view>
     <hr>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, earum libero odit optio repellendus sed
-      soluta? Animi, atque blanditiis commodi consequatur distinctio dolorem eaque eos expedita, modi reprehenderit
-      repudiandae soluta.
-    </p>
+    <button class="btn btn-info" @click="navigateHome">Home Component</button>
   </div>
 </template>
 <script>
-  export default {}
+  export default {
+    name: 'User',
+    data() {
+      return {
+        userID: this.$route.params.id,
+      }
+    },
+    methods:{
+      navigateHome(){
+        // this.$router.push("/");
+        // this.$router.push({ path: '/'});
+        this.$router.push({ name: 'AnaSayfa'});
+      }
+    },
+    watch:{
+      "$route"(to,from){ // route izle yani hangi user çağırılıyorsa ona göre değişiklik var mı yok mu ?
+        this.userID = to.params.id;
+
+        //to değişen rout from değişmeden önceki rout değeri
+
+      }
+    }
+  }
 </script>

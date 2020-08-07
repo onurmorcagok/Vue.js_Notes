@@ -3,15 +3,16 @@
     <h3>User Detail Component</h3>
     <hr>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, earum libero odit optio repellendus sed
-      soluta? Animi, atque blanditiis commodi consequatur distinctio dolorem eaque eos expedita, modi reprehenderit
-      repudiandae soluta.
+      Kullanıcının ID Değeri: {{ $route.params.id }}
     </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, earum libero odit optio repellendus sed
-      soluta? Animi, atque blanditiis commodi consequatur distinctio dolorem eaque eos expedita, modi reprehenderit
-      repudiandae soluta.
-    </p>
+
+    <router-link
+    tag="button"
+    class="btn btn-warning"
+    :to="{ name: 'UserEdit', params: { id: $route.params.id } }">
+    Kullanıcı Düzenle
+    </router-link>
+
   </div>
 </template>
 <script>

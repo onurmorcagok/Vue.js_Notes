@@ -4,17 +4,13 @@
 
       <router-link 
       active-class="active"
-      to="/" 
+      to="/home" 
       exact 
       tag="li">
         <a>Home</a>
       </router-link>
 
-      <router-link 
-      active-class="active"
-      to="/user" 
-      exact 
-      tag="li">
+      <router-link active-class="active" to="/user" exact  tag="li">
         <a>User</a>
       </router-link>
 

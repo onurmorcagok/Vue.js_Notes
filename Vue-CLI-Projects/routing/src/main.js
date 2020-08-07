@@ -8,7 +8,7 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
   routes,
-  mode: 'history', // URL üzerinde # kullanımı için tanımlanır. Default değeri "hash" olarak alır.
+  mode: 'history', // URL üzerinde # kullanımı için tanımlanır. Default değeri "hash" olarak alır ve URL # ile gelir.
 });
 
 new Vue({
