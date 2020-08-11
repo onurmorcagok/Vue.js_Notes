@@ -19,7 +19,7 @@
     methods:{
       navigateHome(){
         // this.$router.push("/");
-        // this.$router.push({ path: '/'});
+        // this.$router.push({ path: '/home'});
         this.$router.push({ name: 'AnaSayfa'});
       }
     },
