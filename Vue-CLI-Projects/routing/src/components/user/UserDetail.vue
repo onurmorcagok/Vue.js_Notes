@@ -9,7 +9,7 @@
     <router-link
     tag="button"
     class="btn btn-warning"
-    :to="{ name: 'UserEdit', params: { id: $route.params.id } }">
+    :to="{ name: 'UserEdit', params: { id: $route.params.id } , query: {name: 'onur' , surname: 'morcagok'}}">
     Kullanıcı Düzenle
     </router-link>
 

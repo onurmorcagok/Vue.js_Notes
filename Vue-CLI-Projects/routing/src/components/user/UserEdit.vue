@@ -3,9 +3,10 @@
     <h3>User Edit Component</h3>
     <hr>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, earum libero odit optio repellendus sed
-      soluta? Animi, atque blanditiis commodi consequatur distinctio dolorem eaque eos expedita, modi reprehenderit
-      repudiandae soluta.
+      Name: {{ $route.query.name }}
+    </p>
+    <p>
+      Surname: {{ $route.query.surname }}
     </p>
   </div>
 </template>

@@ -5,6 +5,7 @@
     </router-view>
     <hr>
     <button class="btn btn-info" @click="navigateHome">Home Component</button>
+    <hr>
   </div>
 </template>
 <script>

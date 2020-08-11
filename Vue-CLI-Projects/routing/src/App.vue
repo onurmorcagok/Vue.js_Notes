@@ -3,11 +3,12 @@
     <div class="row">
       <div class="col-md-12">
         <br>
-        <app-Header></app-Header>
         <hr>
-        <router-view>
+        <router-view name="header-top">
           <!-- Bu tag ile componentlerimiz App üzerinde görüntülenecektir. -->
         </router-view>
+        <router-view></router-view>
+        <router-view name="header-bottom"></router-view>
       </div>
     </div>
   </div>
