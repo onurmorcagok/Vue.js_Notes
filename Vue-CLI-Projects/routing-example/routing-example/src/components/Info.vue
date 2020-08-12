@@ -6,7 +6,7 @@
 
     <hr>
 
-    <router-link tag="button" class="btn btn-success" to="/home">Anasayfa için tıklayınız</router-link>
+    <router-link tag="button" class="btn btn-success" to="/">Anasayfa için tıklayınız</router-link>
 
   </div>
 </template>

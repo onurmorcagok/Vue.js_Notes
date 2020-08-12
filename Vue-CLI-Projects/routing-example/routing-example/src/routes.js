@@ -8,7 +8,7 @@ import Info from './components/Info';
 
 export const routes = [
 
-    { path: '/home', name: HomePage, components: {
+    { path: '/', name: HomePage, components: {
         default: HomePage,
         'header-top': Header,
         

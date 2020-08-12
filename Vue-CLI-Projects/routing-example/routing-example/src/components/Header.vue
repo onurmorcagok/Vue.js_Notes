@@ -5,7 +5,8 @@
 
       <router-link 
       active-class="active" 
-      to="/home" 
+      exact
+      to="/" 
       tag="li">
         <a>Anasayfa</a>
       </router-link>
