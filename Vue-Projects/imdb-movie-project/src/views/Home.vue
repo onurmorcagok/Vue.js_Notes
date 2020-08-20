@@ -14,7 +14,7 @@
     </div>
     <br />
 
-    <div class="movies">
+    <div class="movies" v-if="searchText">
       <appTable :dataList="searchMovies"></appTable>
     </div>
   </div>

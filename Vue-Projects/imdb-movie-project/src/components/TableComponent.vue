@@ -1,12 +1,12 @@
 <template>
-  <table class="table text-white">
-    <thead>
+  <table class="table bg-dark text-light">
+    <thead class="bg-danger text-light">
       <tr>
-        <td>Title</td>
-        <td>Type</td>
-        <td>Year</td>
-        <td>Poster</td>
-        <td>Is Favorite</td>
+        <td>TITLE</td>
+        <td>TYPE</td>
+        <td>YEAR</td>
+        <td>POSTER</td>
+        <td>IS FAVORITE</td>
       </tr>
     </thead>
     <tbody>
