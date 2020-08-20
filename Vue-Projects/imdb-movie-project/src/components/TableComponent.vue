@@ -57,10 +57,16 @@ export default {
       });
     },
     isFavorite(imdbID) {
-      return this.$store.state.favorites.filter(
-        (item) => item.imdbID === imdbID
-      )[0];
+      return this.$store.state.favorites.filter((item) => item.imdbID === imdbID)[0];
     },
   },
 };
 </script>
+
+<style>
+
+.table {
+    text-align: center;
+}
+
+</style>
