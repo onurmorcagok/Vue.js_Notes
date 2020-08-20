@@ -1,7 +1,8 @@
 <template>
   <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">IMDB Movie Project</a>
+      <i class="fas fa-video fa-3x"></i>
+      <a class="navbar-brand" href="/">IMDB Movie Project</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -14,8 +15,12 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <router-link to="/" class="nav-link">Home</router-link>
-          <router-link to="/favorite" class="nav-link">Favorite</router-link>
+          <router-link to="/" class="nav-link">
+          <i class="fas fa-home text-dark"> Home</i>
+          </router-link>
+          <router-link to="/favorite" class="nav-link">
+          <i class="fas fa-star text-dark"> Favorite</i>
+          </router-link>
       </div>
     </nav>
   </div>
@@ -26,3 +31,10 @@ export default {
   name: "Navbar",
 };
 </script>
+
+<style>
+  .fas {
+    margin-right: 5px;
+  }
+
+</style>

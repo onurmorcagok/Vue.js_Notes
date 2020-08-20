@@ -1,9 +1,18 @@
 <template>
   <div class="home">
     <div class="search">
-      <span>Movie Search:</span>
-      <input type="text" v-model="searchText" placeholder="Enter your movie name" />
+      <br />
+      <div class="d-flex flex-column w-100">
+        <div class="position-relative">
+          <input
+            class="search-input form-control"
+            v-model="searchText"
+            type="text"
+            placeholder="Search by movie title"/>
+        </div>
+      </div>
     </div>
+    <br />
 
     <div class="movies">
       <appTable :dataList="searchMovies"></appTable>
@@ -12,9 +21,9 @@
 </template>
 
 <script>
-import debounce from 'lodash/debounce'
-import TableComponent from '../components/TableComponent'
-import { mapState } from 'vuex';
+import debounce from "lodash/debounce";
+import TableComponent from "../components/TableComponent";
+import { mapState } from "vuex";
 export default {
   name: "Home",
   components: {
@@ -22,16 +31,22 @@ export default {
   },
   data() {
     return {
-      searchText: '',
-    }
+      searchText: "",
+    };
   },
   watch: {
-    searchText: debounce(function(newVal){
-      this.$store.dispatch('searchMovie',newVal);
-    },500)
+    searchText: debounce(function (newVal) {
+      this.$store.dispatch("searchMovie", newVal);
+    }, 500),
   },
   computed: {
-    ...mapState(['searchMovies'])
-  }
+    ...mapState(["searchMovies"]),
+  },
 };
 </script>
+
+<style>
+.home {
+  text-align: center;
+}
+</style>
