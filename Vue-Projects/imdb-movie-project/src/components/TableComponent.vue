@@ -1,5 +1,5 @@
 <template>
-  <table class="table">
+  <table class="table text-white">
     <thead>
       <tr>
         <td>Title</td>
