@@ -14,10 +14,8 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
           <router-link to="/" class="nav-link">Home</router-link>
           <router-link to="/favorite" class="nav-link">Favorite</router-link>
-        </ul>
       </div>
     </nav>
   </div>
