@@ -18,8 +18,8 @@ export default new Vuex.Store({
         "https://jsonplaceholder.typicode.com/photos"
       );
 
-      commit("setPhotos", response.data);
-      // console.log(response.data);
+      commit("setPhotos", response.data.splice(0,10));
+
     },
     async filterPhotos({ commit }, event){
       const selectID = parseInt(event.target.options[event.target.options.selectedIndex].innerText);
@@ -27,10 +27,11 @@ export default new Vuex.Store({
         "https://jsonplaceholder.typicode.com/photos"
       );
 
-      commit('setPhotos',response.data);
-      console.log(response.data);
+      commit('setPhotos',response.data.splice(0,10));
+      
+      console.log(selectID);
 
-    }
+    },
   },
   modules: {},
   getters: {

@@ -11,8 +11,13 @@
     <h4>Photos</h4>
     <div class="photos">
       <div v-for="photo in allPhotos" :key="photo.id">
-        <img :src="photo.thumbnailUrl" />
-        <div class="title">{{ photo.thumbnailUrl }}</div>
+        <img :src="photo.thumbnailUrl" @click="getPhotosDetail(photo.id)" />
+        <div class="title">
+          {{ like }}
+          <button @click="like++"><i class="fas fa-thumbs-up"></i></button>
+          {{ dislike }}
+          <button @click="dislike++"><i class="fas fa-thumbs-down"></i></button>
+        </div>
       </div>
     </div>
   </div>
@@ -25,6 +30,8 @@ export default {
   data() {
     return {
       numbers: [1, 2, 3, 4, 5],
+      like:0,
+      dislike:0,
     };
   },
   created() {
@@ -35,15 +42,18 @@ export default {
   },
   methods: {
     ...mapActions(["fetchPhotos", "filterPhotos"]),
+    getPhotosDetail(id) {
+      this.$router.push({ name: "Detail", params: { id } });
+    },
   },
 };
 </script>
 
 <style scoped>
 .photos {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .photo {
@@ -51,17 +61,17 @@ export default {
   padding: 1rem;
   border-radius: 5px;
   text-align: center;
-  position: relative;
   cursor: pointer;
 }
 
 .title {
-  width:auto;
+  width: auto;
   height: auto;
   border: 1px solid #000;
-  padding: 5px;
+  padding: 15px;
   margin-top: 5px;
   font-size: 15px;
+  margin-bottom:15px;
 }
 
 .home {
