@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     Number: {{ $store.state.count }}
     <br><br>
     <button @click="increment">Increment</button> 
@@ -27,6 +27,9 @@
   }
 </script>
 
-<style lang="scss" scoped>
-
+<style>
+#app{
+  text-align: center;
+  margin-top:50px;
+}
 </style>
