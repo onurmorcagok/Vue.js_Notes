@@ -44,8 +44,10 @@ export default {
     setFavorite(movieItem) {
       let message = "";
       if (this.isFavorite(movieItem.imdbID)) {
-        message = `${movieItem.Title} has been removed from favorites`;
-        this.$store.commit("REMOVE_FAVORITE", movieItem);
+        if (confirm("Do you want to remove the selected movie from favorites?")) {
+          message = `${movieItem.Title} has been removed from favorites`;
+          this.$store.commit("REMOVE_FAVORITE", movieItem);
+        }
       } else {
         message = `${movieItem.Title} has been added from favorites`;
         this.$store.commit("SET_FAVORITE", movieItem);
@@ -57,16 +59,16 @@ export default {
       });
     },
     isFavorite(imdbID) {
-      return this.$store.state.favorites.filter((item) => item.imdbID === imdbID)[0];
+      return this.$store.state.favorites.filter(
+        (item) => item.imdbID === imdbID
+      )[0];
     },
   },
 };
 </script>
 
 <style>
-
 .table {
-    text-align: center;
+  text-align: center;
 }
-
 </style>
